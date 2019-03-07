@@ -1,0 +1,36 @@
+header {
+  padding: 219px 30px 150px;
+  height: 100vh;
+  width: 112px;
+  position: fixed;
+  top: 0%;
+  left: 0;
+}
+
+.brave-logo {
+  height: 52px;
+  width: 52px;
+}
+
+#twist {
+  height: 60px;
+  margin-top: 17px;
+}
+
+.social {
+  padding-top: 21px;
+}
+
+.social a {
+  margin-bottom: 20px;
+}
+
+.social a svg {
+  width: 20px;
+  height: auto;
+  cursor: pointer;
+}
+
+.social a:first-child svg {
+  width: 10px;
+}

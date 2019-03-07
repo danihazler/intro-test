@@ -1,0 +1,55 @@
+.content-wrapper {
+	text-align: left;
+	height: 100%;
+	width: 50%;
+}
+
+.brief h3,
+.rules h3 {
+	text-align: left;
+	text-transform: uppercase;
+	line-height: 60px;
+}
+
+.brief,
+.rules {
+	max-width: 380px;
+}
+
+.brief p,
+.rules p {
+	margin-bottom: 30px;
+}
+
+p.your-brief {
+	margin-bottom: 17px;
+}
+
+.brief {
+	margin: 263px auto 0 auto;
+}
+
+.rules {
+	margin: 301px auto 0 auto;
+}
+
+.brief p {
+	color: #f2ecde;
+}
+
+.rules h3 {
+	color: #000000;
+}
+
+#brief {
+	border: none;
+	border-radius: 100%;
+	color: #f2ecde;
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 2.4px;
+	line-height: 25px;
+	position: absolute;
+	width: 154px;
+	height: 154px;
+}

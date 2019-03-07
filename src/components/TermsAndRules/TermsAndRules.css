@@ -1,0 +1,74 @@
+.terms-rules {
+	height: 256px;
+	width: 553px;
+	color: #f2ecde;
+	font-weight: 300;
+	line-height: 22px;
+	text-align: center;
+}
+
+.terms-rules p {
+	margin: 0 auto;
+	width: 422px;
+}
+
+.terms-rules h3 {
+	color: #f2ecde;
+	font-family: "futura-pt", sans-serif;
+	font-size: 23px;
+	font-weight: 900;
+	line-height: 22px;
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+.rt-logo {
+	position: absolute;
+	right: 100px;
+	bottom: 100px;
+}
+
+.rt-logo .brave-logo {
+	height: 107px;
+	width: 107px;
+}
+
+.side-wrapper-animated {
+	height: 100vh;
+	position: absolute;
+	left: 112px;
+	top: 0;
+}
+
+.pageTransition-entering {
+	opacity: 0;
+	transform: translateY(-10px);
+	width: 0;
+}
+
+.pageTransition-entered {
+	opacity: 1;
+	transform: translateY(0px);
+	width: calc(100% - 112px);
+	transition: all 0.7s ease-out;
+}
+
+.textTransition-entering {
+	opacity: 0;
+}
+
+.textTransition-entered {
+	opacity: 1;
+	transition: opacity 3s ease-in-out;
+}
+
+.rt-logo.logoTransition-entering {
+	fill-opacity: 0;
+	transform: scale(0.95);
+}
+
+.rt-logo.logoTransition-entered {
+	fill-opacity: 1;
+	transform: scale(1);
+	transition: all 3s ease-in-out;
+}

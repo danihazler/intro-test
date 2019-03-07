@@ -1,0 +1,124 @@
+@font-face {
+	font-family: "Alpine Typeface Clean";
+	src: url("./assets/fonts/AlpineTypefaceClean/AlpineTypefaceCleanBold.ttf")
+		format("truetype");
+	src: url("./assets/fonts/AlpineTypefaceClean/AlpineTypefaceCleanLight.ttf")
+		format("truetype");
+	src: url("./assets/fonts/AlpineTypefaceClean/AlpineTypefaceCleanRegular.ttf")
+		format("truetype");
+}
+
+@font-face {
+	font-family: "Alpine Typeface A1";
+	src: url("./assets/fonts/AlpineTypefaceA1/AlpineTypefaceA1Bold.ttf")
+		format("truetype");
+	src: url("./assets/fonts/AlpineTypefaceA1/AlpineTypefaceA1Light.ttf")
+		format("truetype");
+	src: url("./assets/fonts/AlpineTypefaceA1/AlpineTypefaceA1Regular.ttf")
+		format("truetype");
+}
+
+*,
+*:before,
+*:after {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f2ecde;
+	height: 100vh;
+	width: 100vw;
+}
+
+.clean {
+	font-family: "Alpine Typeface Clean", sans-serif;
+}
+
+.a1 {
+	font-family: "Alpine Typeface A1", sans-serif;
+}
+
+.futura {
+	font-family: "futura-pt", sans-serif;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+p {
+	font-family: "futura-pt", sans-serif;
+	font-size: 17px;
+}
+
+h1 {
+	font-family: "Alpine Typeface Clean", sans-serif;
+	font-size: 54px;
+}
+
+.bg-black {
+	background-color: #000;
+}
+
+.bg-cream {
+	background-color: #f2ecde;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.f-col {
+	flex-direction: column;
+}
+
+.jc-start {
+	justify-content: start;
+}
+
+.jc-end {
+	justify-content: flex-end;
+}
+
+.lg-txt {
+	font-size: 70px;
+}
+
+.md-txt {
+	font-size: 60px;
+}
+
+.sm-txt {
+	font-size: 13px;
+}
+
+.btn {
+	font-family: "Alpine Typeface Clean", sans-serif;
+	font-size: 17px;
+}
+
+.side-wrapper {
+	position: relative;
+	height: 100vh;
+	width: calc(100% - 112px);
+}
+
+button:focus {
+	outline: none;
+}
+
+.upper {
+	font-size: 20px;
+	text-decoration: underline;
+	font-weight: 100;
+	vertical-align: middle;
+}

@@ -1,0 +1,31 @@
+nav {
+  transform: rotate(-90deg);
+  margin-top: 146px;
+}
+
+nav ul {
+  font-family: 'futura-pt', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav a:first-child {
+  width: 97px;
+}
+
+nav a:last-child {
+  width: 134px;
+}
+
+nav ul a:active,
+nav ul a:focus,
+nav ul a:hover {
+  text-decoration: line-through;
+}
+
+#line {
+  margin: 0 30px;
+  height: 48px;
+  width: 2px;
+}
