@@ -12,9 +12,11 @@ import BriefAndRules from "./components/BriefAndRules";
 import { textContent } from "./components/TermsAndRules/textContent";
 
 import "./App.css";
+import "./AppQueries.css";
 
 class App extends Component {
 	state = {
+		isMobileMenuOpen: false,
 		names: [
 			"John Snow Bandeira",
 			"Cersei de Jesus",
@@ -23,10 +25,19 @@ class App extends Component {
 		]
 	};
 
+	toggleMobileMenu = () => {
+		this.setState(prevState => {
+			return { isMobileMenuOpen: !prevState.isMobileMenuOpen };
+		});
+	};
+
 	render() {
 		return (
 			<React.Fragment>
-				<MainWrapper>
+				<MainWrapper
+					mobileMenuClick={this.toggleMobileMenu}
+					isMobileMenuOpen={this.state.isMobileMenuOpen}
+				>
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/aboutyou" component={AboutYou} />

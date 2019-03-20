@@ -14,16 +14,16 @@ class Game extends Component {
 		totalDegrees: 0,
 		degreeHand: 0,
 		degreePad: 0,
-		difference: 0.03,
+		difference: 50,
 		last: new Date().getTime(),
-		// speedVariation: null,
 		position: null,
 		showChallenge: false,
 		showPad: false,
 		showHand: false
 	};
+
 	play = () => {
-		let randomNum = Math.floor(Math.random() * 6 + 2);
+		let randomNum = Math.floor(Math.random() * 4) + 5;
 
 		this.setState(
 			{
@@ -46,32 +46,21 @@ class Game extends Component {
 
 		let speedVariation = null;
 
-		let degreesDivision = totalDegrees / 6;
-
-		// if (degreesToSpin <= degreesDivision) {
-		// 	speedVariation = difference * 5.25;
-		// 	console.log("1-slow?");
-		// 	this.setState(prevState => ({
-		// 		difference: (prevState.difference = speedVariation),
-		// 		degreeHand: prevState.degreeHand + 1
-		// 	}));
-		// }
+		let degreesDivision = totalDegrees / 10;
 
 		if (degreesToSpin > degreesDivision) {
-			speedVariation = difference * 0.00025;
-			console.log("1-fast?");
+			speedVariation = difference * 0.25;
 			this.setState(prevState => ({
 				difference: (prevState.difference = speedVariation),
-				degreeHand: prevState.degreeHand + 2
+				degreeHand: prevState.degreeHand + 12
 			}));
 		}
 
 		if (degreesToSpin <= degreesDivision) {
-			speedVariation = difference * 5.25;
-			console.log("2-slow?");
+			speedVariation = difference * 7.25;
 			this.setState(prevState => ({
 				difference: (prevState.difference = speedVariation),
-				degreeHand: prevState.degreeHand + 1
+				degreeHand: prevState.degreeHand + 3
 			}));
 		}
 		return;
@@ -84,7 +73,6 @@ class Game extends Component {
 			degreesToSpin,
 			totalDegrees,
 			degreeHand
-			// speedVariation
 		} = this.state;
 
 		let position = (totalDegrees / 360) % 1;
@@ -98,17 +86,19 @@ class Game extends Component {
 				position: position,
 				totalDegrees: 0,
 				showChallenge: true,
-				difference: 0.03
+				difference: 50
 			});
+
+			console.log("Total degrees: ", totalDegrees);
 			console.log("degreeHand FINAL: ", this.state.degreeHand);
 			console.log("position FINAL: ", position);
-			console.log("Total degrees: ", totalDegrees);
 
 			return;
 		}
 
 		if (!last || now - last > difference) {
 			let positionHand = (degreeHand / 360) % 1;
+
 			this.setState(prevState => ({
 				last: now,
 				showPad: true,
@@ -116,25 +106,25 @@ class Game extends Component {
 				degreesToSpin: prevState.degreesToSpin - 1
 				// degreeHand: prevState.degreeHand + 1
 			}));
-			this.getSpeed();
-			// console.log("positionHand LIVE: ", positionHand);
 
-			if (positionHand >= 0.9 || (positionHand >= 0 && positionHand <= 0.14)) {
+			this.getSpeed();
+
+			if (positionHand >= 0.8 || (positionHand >= 0 && positionHand <= 0.04)) {
 				this.setState(prevState => ({
 					degreePad: (prevState.degreePad = 0)
 				}));
 			}
-			if (positionHand >= 0.15 && positionHand <= 0.39) {
+			if (positionHand >= 0.05 && positionHand <= 0.29) {
 				this.setState(prevState => ({
 					degreePad: (prevState.degreePad = 90)
 				}));
 			}
-			if (positionHand >= 0.4 && positionHand <= 0.64) {
+			if (positionHand >= 0.3 && positionHand <= 0.54) {
 				this.setState(prevState => ({
 					degreePad: (prevState.degreePad = 180)
 				}));
 			}
-			if (positionHand >= 0.65 && positionHand <= 0.89) {
+			if (positionHand >= 0.55 && positionHand <= 0.79) {
 				this.setState(prevState => ({
 					degreePad: (prevState.degreePad = 270)
 				}));
@@ -145,8 +135,6 @@ class Game extends Component {
 
 	render() {
 		const { degreePad, degreeHand, position, showPad, showHand } = this.state;
-		// console.log("Difference: ", this.state.difference);
-		// console.log("Position: ", this.state.position);
 
 		let challengeTitle = null;
 
@@ -156,13 +144,13 @@ class Game extends Component {
 					className="challenge"
 					style={{ transform: `rotate(-${degreePad}deg)` }}
 				>
-					{position === 0 ? (
+					{position === 0.25 ? (
 						<span id="pg">
 							Parson's <br />
 							Green
 						</span>
 					) : null}
-					{position === 0.25 ? (
+					{position === 0 ? (
 						<span id="bny">
 							Brave
 							<br />
@@ -171,14 +159,14 @@ class Game extends Component {
 							York
 						</span>
 					) : null}
-					{position === 0.5 ? (
+					{position === 0.75 ? (
 						<span id="st">
 							Sex
 							<br />
 							Toys
 						</span>
 					) : null}
-					{position === 0.75 ? (
+					{position === 0.5 ? (
 						<span id="sb">
 							Sheer
 							<br />
@@ -255,15 +243,14 @@ class Game extends Component {
 								</button>
 							</div>
 						</div>
-
-						<div className="mobile-wrapper">
-							<img
-								className="mobile_dashed"
-								src="./dashed_mobile.svg"
-								alt="dashed lines"
-							/>
-							<img className="mobile_spiral" src="./spiral.svg" alt="spiral" />
-						</div>
+					</div>
+					<div className="mobile-wrapper">
+						<img
+							className="mobile_dashed"
+							src="./dashed_mobile.svg"
+							alt="dashed lines"
+						/>
+						<img className="mobile_spiral" src="./spiral.svg" alt="spiral" />
 					</div>
 
 					<div

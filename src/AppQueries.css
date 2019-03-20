@@ -1,0 +1,15 @@
+@media only screen and (max-height: 798px) {
+    header {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    #for-clipping {
+        top: 70px;
+    }
+
+    .begin {
+        bottom: 77px;
+    }
+}
+

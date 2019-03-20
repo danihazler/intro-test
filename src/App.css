@@ -110,6 +110,7 @@ h1 {
 	position: relative;
 	height: 100vh;
 	width: calc(100% - 112px);
+	overflow: hidden;
 }
 
 button:focus {

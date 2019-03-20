@@ -1,24 +1,28 @@
-#loader {
-	position: absolute;
-	left: 148px;
-	top: 100px;
-}
-
 .intro-anime {
+	/* border: 1px solid red; */
 	position: relative;
+	left: 45%;
+	top: 50%;
+	transform: translate(-45%, -50%);
+	width: 670px;
+	height: 100%;
 }
 
 .home .brave-logo {
 	position: absolute;
-	top: 438px;
-	left: 646px;
+	top: 365px;
+	left: 50%;
+	/* did not add translate cause of unwanted "slide" during animation */
+	transform: scale(1);
 	width: 149px;
 	height: 149px;
+	z-index: -1;
+	transition: all 2s;
 }
 
-.scale-in-out {
-	animation: scale-in-out 0.5s forwards;
-	-webkit-animation: scale-in-out 0.5s forwards;
+.logo-enter-done {
+	animation: scale-in-out 1s forwards;
+	-webkit-animation: scale-in-out 1s forwards;
 }
 
 @keyframes scale-in-out {
@@ -28,9 +32,8 @@
 	50% {
 		transform: scale(0.8);
 	}
-	to {
+	100% {
 		transform: scale(1.2);
-		/* opacity: 0; */
 	}
 }
 
@@ -41,23 +44,16 @@
 	50% {
 		transform: scale(0.8);
 	}
-	to {
+	100% {
 		transform: scale(1.2);
-		/* opacity: 0; */
 	}
-}
-
-#clipping {
-	position: absolute;
-	top: 162px;
-	left: 265px;
-	z-index: 1;
 }
 
 #for-clipping {
 	position: absolute;
 	top: 102px;
-	left: 265px;
+	left: 50%;
+	transform: translateX(-50%);
 	width: 650px;
 	height: 526px;
 	clip-path: url(#clipping-path);
@@ -69,61 +65,178 @@
 	background-color: black;
 	border-radius: 100%;
 	position: absolute;
-	bottom: 4px;
+	bottom: 2px;
 	right: 0;
+	opacity: 0;
 }
 
 .home .intro-text {
 	color: #f2ecde;
 	position: absolute;
-	top: 104px;
-	right: 8px;
-	height: 247px;
-	width: 344px;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
 	z-index: 1;
+	height: 384px;
+	width: 384px;
 }
 
-.home .brave-enough h2 {
-	display: inline-block;
-	font-size: 54px;
-	letter-spacing: 6px;
-	line-height: 64px;
-	text-align: center;
-}
-
-/* to overlap game.css styles
------- NEED FIX
-*/
 .home .brave-enough {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 0;
+}
+
+.home .brave-enough p {
+	font-size: 54px;
+	font-weight: bold;
+	letter-spacing: 6px;
+	text-align: center;
+	display: inline-block;
 	position: relative;
 	top: 0;
 	left: 0;
-	z-index: 0;
+	opacity: 0;
+}
+
+.p-brave-enter-done {
+	animation: fade-up-brave 0.4s ease-in forwards 0.8s;
+	-webkit-animation: fade-up-brave 0.4s ease-in forwards 0.8s;
+}
+
+@keyframes fade-up-brave {
+	from {
+		transform: translateY(150px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes fade-up-brave {
+	from {
+		transform: translateY(150px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.p-enough-enter-done {
+	animation: fade-up-enough 0.2s ease-in forwards 1.1s;
+	-webkit-animation: fade-up-enough 0.2s ease-in forwards 1.1s;
+}
+
+@keyframes fade-up-enough {
+	from {
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes fade-up-enough {
+	from {
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .have-you-got {
 	color: #f2ecde;
 	line-height: 22px;
 	text-align: center;
+	position: absolute;
+	bottom: 80px;
+	left: 50%;
+	transform: translateX(-50%);
 	width: 285px;
-	margin-top: -12px;
-	margin-left: -18px;
 }
 
-#arm {
+.have-you-got p {
+	opacity: 0;
+}
+
+.p-have-enter-done {
+	animation: fade-up-have 0.3s forwards 1.1s;
+	-webkit-animation: fade-up-have 0.3s forwards 1.1s;
+}
+
+@keyframes fade-up-have {
+	from {
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(-7px);
+	}
+}
+
+@-webkit-keyframes fade-up-have {
+	from {
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(-7px);
+	}
+}
+
+.p-intership-enter-done {
+	animation: fade-up-intership 0.3s forwards 1.1s;
+	-webkit-animation: fade-up-intership 0.3s forwards 1.1s;
+}
+
+@keyframes fade-up-intership {
+	from {
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(-7px);
+	}
+}
+
+@-webkit-keyframes fade-up-intership {
+	from {
+		transform: translateY(50px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(-7px);
+	}
+}
+
+#arm-desktop {
 	position: relative;
 	right: 120px;
 	bottom: 22px;
-	animation: slide-arm 1.5s forwards;
-	-webkit-animation: slide-arm 1.5s forwards;
+	opacity: 0;
+}
+
+.arm-enter-done {
+	animation: slide-arm 0.6s ease-in-out forwards 0.5s;
+	-webkit-animation: slide-arm 0.6s ease-in-out forwards 0.5s;
 }
 
 @keyframes slide-arm {
 	from {
+		opacity: 0;
 		right: -500px;
 		bottom: -230px;
 	}
 	to {
+		opacity: 1;
 		right: 120px;
 		bottom: 22px;
 	}
@@ -131,19 +244,77 @@
 
 @-webkit-keyframes slide-arm {
 	from {
+		opacity: 0;
 		right: -500px;
 		bottom: -230px;
 	}
 	to {
+		opacity: 1;
 		right: 120px;
 		bottom: 22px;
 	}
 }
 
+.blackhole-enter-done {
+	animation: scale-in 0.2s forwards 0.7s;
+	-webkit-animation: scale-in 0.2s forwards 0.7s;
+}
+
+@keyframes scale-in {
+	from {
+		opacity: 0;
+		transform: scale(0);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@-webkit-keyframes scale-in {
+	from {
+		opacity: 0;
+		transform: scale(0);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
 .begin {
 	position: absolute;
-	bottom: 106px;
-	left: 821px;
+	bottom: 206px;
+	left: 65%;
+	transform: translateX(-65%);
+	opacity: 0;
+}
+
+.btn-animation-enter-done {
+	animation: scale-in-btn 0.5s forwards 1.2s;
+	-webkit-animation: scale-in-btn 0.5s forwards 1.2s;
+}
+
+@keyframes scale-in-btn {
+	from {
+		opacity: 0;
+		transform: scale(0);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@-webkit-keyframes scale-in-btn {
+	from {
+		opacity: 0;
+		transform: scale(0);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 .pulse-btn {
@@ -175,7 +346,7 @@
 
 @keyframes pulse {
 	0% {
-		transform: scale(1.3);
+		transform: scale(1.2);
 	}
 	100% {
 		transform: scale(0.9);
@@ -185,7 +356,7 @@
 
 @-webkit-keyframes pulse {
 	0% {
-		transform: scale(1.3);
+		transform: scale(1.2);
 	}
 	100% {
 		transform: scale(0.9);
@@ -200,10 +371,37 @@
 	letter-spacing: 6px;
 	line-height: 32px;
 	text-align: center;
-	overflow: hidden;
 	position: absolute;
-	top: 2em;
+	top: 40px;
 	right: 0;
 	width: 305px;
 	height: 47px;
+	opacity: 0;
+}
+
+.timer-enter-done {
+	animation: slide-left 0.5s forwards 1.2s;
+	-webkit-animation: slide-left 0.5s forwards 1.2s;
+}
+
+@keyframes slide-left {
+	from {
+		opacity: 0;
+		transform: translateX(310px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@-webkit-keyframes slide-left {
+	from {
+		opacity: 0;
+		transform: translateX(310px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
 }

@@ -1,0 +1,55 @@
+@media only screen and (max-width: 1024px) and (max-height: 768px) {
+	header.desktop {
+		padding-top: 86px;
+	}
+}
+
+@media only screen and (max-width: 420px) {
+	.intro-anime {
+		width: 100%;
+	}
+	#timer {
+		font-size: 21px;
+		width: 124px;
+	}
+	.side-wrapper.home {
+		width: 100%;
+	}
+	.home .brave-logo {
+		top: 200px;
+		left: 115px;
+	}
+	.begin {
+		left: 40%;
+		transform: translateX(-40%);
+	}
+	#for-clipping {
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 278px;
+	}
+	#arm-desktop {
+		display: none;
+	}
+	#black-hole {
+		height: 277px;
+		width: 277px;
+		top: 65px;
+	}
+	.home .intro-text {
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+	}
+	.home .brave-enough {
+		top: 115px;
+	}
+	.home .brave-enough p {
+		font-size: 38px;
+	}
+	.have-you-got {
+		bottom: 175px;
+	}
+}
